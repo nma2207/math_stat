@@ -1,12 +1,16 @@
-x=read.csv(file="D:/учеба/пзтв/7_R2_Z1.csv",h=T)$Z6I
-source("D:/учеба/пзтв/functions2.r")
+п»їx=read.csv(file="D:/СѓС‡РµР±Р°/РїР·С‚РІ/7_R2_Z1.csv",h=T)$Z6I
+source("D:/СѓС‡РµР±Р°/РїР·С‚РІ/functions2.r")
 x=swap(x)
-M=sum(x) #статистика
+M=sum(x) #СЃС‚Р°С‚РёСЃС‚РёРєР°
 n=length(x)
 alfa_c=alfa_crit(n,M,0.7,less=F)
 alfa=0.05
-res=ifelse(alfa_c<=alfa,"верна альтернатива", "верна гипотеза")
-results=c(n,M,alfa_c,alfa,res)
-names(results)=c("объем выборки    ", "кол-во успехов   ", "альфа-критическое","альфа            ","результат:       ")
+c=c_krit(n,M,0.7,alfa)
+res=ifelse(M>c,"РІРµСЂРЅР° Р°Р»СЊС‚РµСЂРЅР°С‚РёРІР°", "РІРµСЂРЅР° РіРёРїРѕС‚РµР·Р°")
+results=c(n,M,alfa,c,alfa_c,res)
+names(results)=c("РѕР±СЉРµРј РІС‹Р±РѕСЂРєРё    ", "РєРѕР»-РІРѕ СѓСЃРїРµС…РѕРІ   ","Р°Р»СЊС„Р°            ","c-РєСЂРёС‚РёС‡РµСЃРєРѕРµ    ", "Р°Р»СЊС„Р°-РєСЂРёС‚РёС‡РµСЃРєРѕРµ","СЂРµР·СѓР»СЊС‚Р°С‚:       ")
 d=data.frame(results=results)
-write.table(d, file = "D:/учеба/пзтв/Z3_1.txt", sep = "     ", col.names =F, quote=F)
+write.table(d, file = "D:/СѓС‡РµР±Р°/РїР·С‚РІ/Z3_1.txt", sep = "     ", col.names =F, quote=F)
+
+
+

@@ -16,3 +16,11 @@ alfa_crit=function(n,m,p, less){
   }
   return (result)
 }
+c_krit=function(n,m,p,alpha){
+  c=n;
+  while(alfa_crit(n,c,p,less=F)<alpha){
+    c=c-1;
+  }
+  return (c+1)
+}
+
