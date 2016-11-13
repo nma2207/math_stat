@@ -21,6 +21,6 @@ c_krit=function(n,m,p,alpha){
   while(alfa_crit(n,c,p,less=F)<alpha){
     c=c-1;
   }
-  return (c+1)
+  return (c)
 }
 
