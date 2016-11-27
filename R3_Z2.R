@@ -3,7 +3,7 @@ Q<-0.99
 alfa=0.01
 1-alfa
 n<-length(x)
-ta<-qt(0.99,n-1)
+ta<-qt(Q,n-1)
 x_<-mean(x)
 source("D:/учеба/пзтв/functions.r")
 s2<-dispersia(x)
