@@ -1,3 +1,8 @@
-x<-read.csv(file="D:/ÑƒÑ‡ÐµÐ±Ð°/Ð¿Ð·Ñ‚Ð²/7_R3_Z1.csv",h=T)$x
+x<-read.csv(file="D:/ó÷åáà/ïçòâ/7_R3_Z1.csv",h=T)$x
 m<-mean(x)
 o<-(1-2*m)/(m-1)
+results<-c(length(x),m,o)
+names(results)<-c("Îáúåì âûáîðêè   ", "Ñðåäíåå         ", "Îöåíêà          ")
+d<-data.frame(results=results)
+write.table(d, file = "D:/ó÷åáà/ïçòâ/R3_z1.txt", sep = "        ", col.names =NA, quote=F) 
+d
