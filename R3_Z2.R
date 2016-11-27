@@ -3,15 +3,16 @@ Q<-0.99
 alfa=0.01
 1-alfa
 n<-length(x)
-ta<-qt(1-alfa,n-1)
-ta2<-qt(1-alfa/2,n-1)
-m<-mean(x)
-s<-sd(x)
-var(x)
-s*s
+ta<-qt(0.99,n-1)
+x_<-mean(x)
 source("D:/учеба/пзтв/functions.r")
-s<-sqrt(dispersia(x))
-dn<-m-s/(sqrt(n-1))*ta2
-dv<-m+s/(sqrt(n-1))*ta2
-un<-m-s/(sqrt(n-1))*ta
-uv<-m+s/(sqrt(n-1))*ta
+s2<-dispersia(x)
+s<-sqrt(s2)
+m<-s/sqrt(n)
+nb<-x_-m*ta
+
+results<-c(n, x_, m, nb, ta)
+names(results)<-c("Объем выборки       ", "Выборочное среднее  ", "Ст.ошибка среднего ","Нижняя граница      " , "Квантиль         ")
+d<-data.frame(results=results)
+write.table(d, file = "D:/учеба/пзтв/R3_z2.txt", sep = "     ", col.names =NA, quote=F)  
+d
