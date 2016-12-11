@@ -8,3 +8,4 @@ sumVer<-c(sum(data[1]),sum(data[2]),sum(data[3]),sum(data[4]),sum(data[5]))
 sumVer
 sum(sumVer)
 statistika(data)
+qchisq(p = 0.95, df = 8)

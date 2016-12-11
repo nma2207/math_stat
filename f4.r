@@ -80,15 +80,16 @@ statistika<-function(data)
   {
     sumHor[i]<-data$D1[i]+data$D2[i]+data$D3[i]+data$D4[i]+data$D5[i]
   }
+
   n<-sum(data)
   x2<-0
   for (m in 1:3)
   {
-    x2<-x2+((n*data$D1[m]-sumHor[i]*sumVer[1])^2)/(n*sumHor[i]*sumVer[1])
-    x2<-x2+((n*data$D2[m]-sumHor[i]*sumVer[2])^2)/(n*sumHor[i]*sumVer[2])
-    x2<-x2+((n*data$D3[m]-sumHor[i]*sumVer[3])^2)/(n*sumHor[i]*sumVer[3])
-    x2<-x2+((n*data$D4[m]-sumHor[i]*sumVer[4])^2)/(n*sumHor[i]*sumVer[4])
-    x2<-x2+((n*data$D5[m]-sumHor[i]*sumVer[5])^2)/(n*sumHor[i]*sumVer[5])
+    x2<-x2+((n*data$D1[m]-sumHor[m]*sumVer[1])^2)/(n*sumHor[m]*sumVer[1])
+    x2<-x2+((n*data$D2[m]-sumHor[m]*sumVer[2])^2)/(n*sumHor[m]*sumVer[2])
+    x2<-x2+((n*data$D3[m]-sumHor[m]*sumVer[3])^2)/(n*sumHor[m]*sumVer[3])
+    x2<-x2+((n*data$D4[m]-sumHor[m]*sumVer[4])^2)/(n*sumHor[m]*sumVer[4])
+    x2<-x2+((n*data$D5[m]-sumHor[m]*sumVer[5])^2)/(n*sumHor[m]*sumVer[5])
   }
   return (x2)
 }
