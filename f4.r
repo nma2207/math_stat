@@ -93,3 +93,17 @@ statistika<-function(data)
   }
   return (x2)
 }
+korr<-function(x,y)
+{
+  source("D:/учеба/пзтв/functions.r")
+  mx<-mean(x)
+  my<-mean(y)
+  r<-0
+  for(i in 1:length(x))
+  {
+    r<-r+(x[i]-mx)*(y[i]-my)
+  }
+  print(r)
+  r<-r/(length(x)*(dispersia(x)^0.5)*(dispersia(y)^0.5))
+  return(r)
+}
