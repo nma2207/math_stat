@@ -4,12 +4,13 @@ y<-d$Z14.15.16_y
 source("D:/учеба/пзтв/f4.r")
 data<-create_table(x,y)
 data
-sumVer<-c(sum(data[1]),sum(data[2]),sum(data[3]),sum(data[4]),sum(data[5]))
+sum(data)
+sumVer<-c(sum(data[1]),sum(data[2]),sum(data[3]),sum(data[4]))
 sumVer
 sum(sumVer)
 s<-statistika(data)
-ck<-qchisq(p = 0.95, df = 8)
-ak<-1-pchisq(s,8)
+ck<-qchisq(p = 0.975, df = 3*4)
+ak<-1-pchisq(s,12)
 results<-c(length(x), s, ck, ak)
 names(results)<-c("Объем         ", "Статистика    ", "с-крит        ", "альфа-крит    ")
 dres<-data.frame(results=results)
